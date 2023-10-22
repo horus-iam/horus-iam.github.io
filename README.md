@@ -1,24 +1,9 @@
-# docs4all demo
+# Horus IAM Platform
 
-Yes, another static site generator for markdown but with **infinite left menu** instead two levels of mkdocs-material, docusaurus 2, justthedocs, etc
+A simple and lightweight oauth2 engine with web console for management and ready to use oauth2 endpoints 
 
-![](https://avatars.githubusercontent.com/u/101013016?s=400&u=e1ca8d2e0c8bb40784fa75586099e22050a42218&v=4)
+## Demo
 
-## How it works?
-For technical details go to the official repository:
-
-https://github.com/docs4all/docs4all
-
-## How to run?
-
-- For developers https://github.com/docs4all/docs4all#start-with-nodejs
-- For server https://github.com/docs4all/docs4all#static-web
-- For server wtith docker
-
-```
-docker build -t docs4all .
-docker run -it --name my-team-wiki -p 8080:80 docs4all
-```
 
 
 ## Contributors
