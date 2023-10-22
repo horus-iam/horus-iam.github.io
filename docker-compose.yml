@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  game-docs:
+    build: .
+    image: game-docs
+    container_name: game-docs
+    ports:
+     - "8081:80"
+    environment:
+      TZ: America/Lima

@@ -1,0 +1,17 @@
+{
+  "name": "docs4all-demo",
+  "version": "1.0.0",
+  "description": "docs4all-demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "docs4all --mode=start",
+    "publish": "docs4all -m publish",
+    "build": "docs4all -m build",
+    "dev": "nodemon --watch markdown -e js,md --ignore database.json node_modules/docs4all/Index.js --mode=start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "docs4all": "github:docs4all/docs4all"
+  }
+}
