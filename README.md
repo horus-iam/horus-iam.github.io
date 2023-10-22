@@ -43,8 +43,11 @@ Made with love <3
 
 - Java
 - Openxava
+- Spring boot
 - Mysql
 - Docker
+- Docs4all
+- [T-rext ](https://github.com/jrichardsz-software-architect-tools/t-rext)
 
 ## Coming soon
 
