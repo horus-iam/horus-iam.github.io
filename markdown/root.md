@@ -1,7 +1,7 @@
 # Horus IAM Platform
 
 <p>
-    <img src="https://github.com/horus-iam/horus-iam.github.io/assets/3322836/2bab9159-1bfb-4c81-9780-0c8c4790c2b5" width=100 >
+    <img src="https://github.com/user-attachments/assets/85b9493b-cb16-49a9-96c1-918ad78ef68c" width=100 >
 </p>
 
 A simple and lightweight oauth2 engine with web console for management and ready to use oauth2 endpoints. 

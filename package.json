@@ -7,11 +7,11 @@
     "start": "docs4all --mode=start",
     "publish": "docs4all -m publish",
     "build": "docs4all -m build",
-    "dev": "nodemon --watch markdown -e js,md --ignore database.json node_modules/docs4all/Index.js --mode=start"
+    "dev": "nodemon --watch markdown -e js,md --ignore database.json node_modules/docs4all/src/main/node/Index.js --mode=start"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "docs4all": "github:docs4all/docs4all"
+    "docs4all": "github:docs4all/docs4all#1.0.3"
   }
 }

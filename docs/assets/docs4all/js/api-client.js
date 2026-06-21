@@ -1,54 +1,32 @@
-function ApiClient(){
+function ApiClient() {
 
   var apiBaseUrl = getLocationBasePath();
   var database = new loki('database.db');
-  var settings;
 
   this.init = async () => {
     await this.loadDatabase();
-    await this.loadSettings();
-    console.log(settings);
   }
-
-  this.loadSettings = () => {
-    console.log("Loading settings");
-    return new Promise(function(resolve, reject) {
-      $.getJSON("./ui-settings.json", function(data) {
-        settings = data;
-        resolve()
-      }).fail(function(jqXHR, textStatus, errorThrown) {
-        console.log("settings are not configured");
-        console.log(errorThrown);
-        resolve();
-      });
-    });
-  }
-
   this.loadDatabase = () => {
     console.log("Loading database");
-    return new Promise(function(resolve, reject) {
-      $.getJSON("./database.json", function(data) {
+    return new Promise(function (resolve, reject) {
+      $.getJSON("./database.json", function (data) {
         database.loadJSONObject(data);
         resolve()
-      }).fail(function() {
+      }).fail(function () {
         console.log("An error has occurred.");
         reject();
       });
     });
   }
 
-  this.getSettings = () => {
-    return settings;
-  }
-
   this.findAll = () => {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       resolve(database.getCollection('documents').data);
     });
   };
 
   this.findDocumentByPath = (path) => {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       var query = [
         {
           "path": path
@@ -64,11 +42,11 @@ function ApiClient(){
   };
 
   this.findDocumentByText = (text) => {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       var queryCollection = [
         {
           "text": {
-            "$regex": [text,"i"]
+            "$regex": [text, "i"]
           }
         }
       ];
@@ -88,12 +66,12 @@ function ApiClient(){
   * @param {string} value
   */
   function addParam(url, param, value) {
-     param = encodeURIComponent(param);
-     var a = document.createElement('a');
-     param += (value ? "=" + encodeURIComponent(value) : "");
-     a.href = url;
-     a.search += (a.search ? "&" : "") + param;
-     return a.href;
+    param = encodeURIComponent(param);
+    var a = document.createElement('a');
+    param += (value ? "=" + encodeURIComponent(value) : "");
+    a.href = url;
+    a.search += (a.search ? "&" : "") + param;
+    return a.href;
   }
 
   function getLocationBasePath() {
@@ -108,16 +86,16 @@ function ApiClient(){
       return;
     }
 
-    if(window.location.port){
-      return window.location.protocol+"//"+window.location.hostname+":"+window.location.port
-    }else {
-      return window.location.protocol+"//"+window.location.hostname
+    if (window.location.port) {
+      return window.location.protocol + "//" + window.location.hostname + ":" + window.location.port
+    } else {
+      return window.location.protocol + "//" + window.location.hostname
     }
   }
 
 }
 
-if(typeof window._context === 'undefined'){
-   window._context = {};
+if (typeof window._context === 'undefined') {
+  window._context = {};
 }
-window._context["ApiClient"] =  new ApiClient();
+window._context["ApiClient"] = new ApiClient();
