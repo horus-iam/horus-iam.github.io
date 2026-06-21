@@ -55,6 +55,13 @@ Made with love <3
 - c# sdk
 - nodejs cdk
 
+## Publish
+
+```
+export DOCS4ALL_SITE_FOLDER=docs
+npm run publish
+```
+
 ## Contributors
 
 <table>
